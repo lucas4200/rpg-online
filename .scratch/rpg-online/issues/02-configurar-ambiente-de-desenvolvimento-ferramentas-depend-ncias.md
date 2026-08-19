@@ -4,8 +4,7 @@
 
 **Blocked by:** 01
 
-**Status:** ready-for-agent
+**Status:** done
 
-- [ ] Acceptance criterion 1: Novo desenvolvedor consegue seguir DEV_SETUP.md e ter Godot, compilador C++ e psql funcionando
-- [ ] Acceptance criterion 2: Script setup-dev.ps1 (ou .sh) roda sem erros e instala as dependências listadas
-
+- [x] Acceptance criterion 1: Novo desenvolvedor consegue seguir DEV_SETUP.md e ter Godot, compilador C++ e psql funcionando
+- [x] Acceptance criterion 2: Script setup-dev.ps1 (ou .sh) roda sem erros e instala as dependências listadas

@@ -1,0 +1,52 @@
+# Executables
+*.exe
+*.obj
+
+# Build artifacts
+/Debug
+/Release
+/x64
+/x86
+
+# Godot specific
+.import/
+.godot/
+export.cfg
+export_presets.cfg
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# Node modules
+node_modules/
+
+# Backup files
+*~
+*.bak
+
+# Temporary files
+*.tmp
+*.temp
+
+# IDE folders
+.vscode/
+.idea/
+
+# PostgreSQL
+postgresql.conf
+pg_hba.conf
+
+# Redis
+dump.rdb
+appendonly.aof
+
+# Misc
+*.csv
+*.md~
