@@ -47,7 +47,7 @@ void handle_client(SOCKET clientSocket) {
     closesocket(clientSocket);
 }
 
-int __cdecl main(void) 
+int __cdecl main(int argc, char* argv[]) 
 {
     WSADATA wsaData;
     int iResult;
@@ -57,6 +57,11 @@ int __cdecl main(void)
 
     struct addrinfo *result = NULL;
     struct addrinfo hints;
+
+    const char* port = DEFAULT_PORT;
+    if (argc > 1) {
+        port = argv[1];
+    }
 
     // Initialize Winsock
     iResult = WSAStartup(MAKEWORD(2,2), &wsaData);
@@ -72,7 +77,7 @@ int __cdecl main(void)
     hints.ai_flags = AI_PASSIVE;
 
     // Resolve the server address and port
-    iResult = getaddrinfo(NULL, DEFAULT_PORT, &hints, &result);
+    iResult = getaddrinfo(NULL, port, &hints, &result);
     if (iResult != 0) {
         printf("getaddrinfo failed with error: %d\n", iResult);
         WSACleanup();
@@ -87,6 +92,10 @@ int __cdecl main(void)
         WSACleanup();
         return 1;
     }
+
+    // Allow address reuse to avoid "Address already in use" errors
+    int optval = 1;
+    setsockopt(ListenSocket, SOL_SOCKET, SO_REUSEADDR, (const char*)&optval, sizeof(optval));
 
     // Setup the TCP listening socket
     iResult = bind(ListenSocket, result->ai_addr, (int)result->ai_addrlen);
@@ -108,7 +117,7 @@ int __cdecl main(void)
         return 1;
     }
 
-    printf("Server listening on port %s. Waiting for connections...\n", DEFAULT_PORT);
+    printf("Server listening on port %s. Waiting for connections...\n", port);
 
     // Accept connections in a loop
     while (true) {

@@ -4,9 +4,8 @@
 
 **Blocked by:** 03,04
 
-**Status:** ready-for-agent
+**Status:** done
 
-- [ ] Acceptance criterion 1: Cliente compila e roda
-- [ ] Acceptance criterion 2: Janela aparece com fundo colorido
-- [ ] Acceptance criterion 3: Conecta ao servidor em localhost e troca mensagem ping/pong sem erro
-
+- [x] Acceptance criterion 1: Cliente compila e roda
+- [x] Acceptance criterion 2: Janela aparece com fundo colorido
+- [x] Acceptance criterion 3: Conecta ao servidor em localhost e troca mensagem ping/pong sem erro
