@@ -4,10 +4,9 @@
 
 **Blocked by:** 04,05,02
 
-**Status:** ready-for-agent
+**Status:** done
 
-- [ ] Acceptance criterion 1: Tabela accounts criada com colunas id, email (única), password_hash, created_at
-- [ ] Acceptance criterion 2: Registro com email válido e senha forte gera hash e grava linha
-- [ ] Acceptance criterion 3: Registro com email duplicado retorna erro 409
-- [ ] Acceptance criterion 4: Senha armazenada apenas como hash
-
+- [x] Acceptance criterion 1: Tabela accounts criada com colunas id, email (única), password_hash, created_at
+- [x] Acceptance criterion 2: Registro com email válido e senha forte gera hash e grava linha
+- [x] Acceptance criterion 3: Registro com email duplicado retorna erro 409
+- [x] Acceptance criterion 4: Senha armazenada apenas como hash
